@@ -20,7 +20,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vu1-2a-2F2" userLabel="FoodIntakeTitle">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="136"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;APP NAME HERE&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jdf-1j-6sm">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Intake" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jdf-1j-6sm">
                                         <rect key="frame" x="63.5" y="100" width="287" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="F2l-3o-Nwh"/>
@@ -95,7 +95,7 @@
                                     <constraint firstAttribute="bottom" secondItem="UMN-cF-qux" secondAttribute="bottom" constant="21" id="nKy-Ua-tXV"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="15"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tRd-3I-DAV" userLabel="FoodIntakeHistoryView">
@@ -200,7 +200,7 @@
                                     <constraint firstItem="tOl-uy-BZG" firstAttribute="top" secondItem="cNs-9J-a8C" secondAttribute="bottom" constant="9" id="yH6-wQ-g4H"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="15"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
@@ -232,7 +232,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LQC-bq-H5h" userLabel="FoodIntakeTitle">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="136"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;APP NAME HERE&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6k-4P-VwJ">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories Burned" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6k-4P-VwJ">
                                         <rect key="frame" x="63.5" y="100" width="287" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="Dea-Lq-f8M"/>
@@ -312,7 +312,7 @@
                                     <constraint firstAttribute="bottom" secondItem="OOy-YP-Cc4" secondAttribute="bottom" constant="27" id="mGP-gN-VS4"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="15"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z47-eW-dt0" userLabel="StepsTakenView">
@@ -375,7 +375,7 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="374" id="x4i-Gz-9fJ"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="15"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9BE-eU-quo" userLabel="StepsTakenTableView">
@@ -464,7 +464,7 @@
                                     <constraint firstAttribute="height" constant="81" id="zW0-Df-MQ6"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="15"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
@@ -491,15 +491,13 @@
         <!--Item 1-->
         <scene sceneID="4WW-jO-xXW">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CzN-u4-6fX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="PGn-G5-sAa" customClass="ProfileViewController" customModule="Calorie_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hFE-hB-iCz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zvf-Rx-aYb">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zvf-Rx-aYb" userLabel="AppTitleView">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="136"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&lt;APP NAME HERE&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P38-iy-f8B">
                                         <rect key="frame" x="8" y="100" width="287" height="28"/>
@@ -519,28 +517,35 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Mr-1v-zuC">
-                                        <rect key="frame" x="16" y="44" width="35" height="26"/>
+                                        <rect key="frame" x="15" y="44" width="62" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemRedColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                        <state key="normal" title="Button">
+                                        <state key="normal" title="Logout">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="1"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="414" id="1ie-Ll-IMa"/>
+                                    <constraint firstAttribute="height" constant="136" id="TnJ-6l-PAb"/>
+                                </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome Neriyah!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YEr-nR-csx">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Neriyah!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YEr-nR-csx">
                                 <rect key="frame" x="72" y="166" width="270" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="270" id="LMZ-Tq-KPe"/>
+                                    <constraint firstAttribute="height" constant="30" id="QxV-wb-nbr"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="30"/>
                                 <color key="textColor" red="0.20392156859999999" green="0.2470588235" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tXW-eN-jgn">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tXW-eN-jgn" userLabel="CaloriesBurnedView">
                                 <rect key="frame" x="20" y="701" width="374" height="81"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="flame" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Fsi-fg-qyF">
@@ -576,10 +581,10 @@
                                     <constraint firstAttribute="width" constant="374" id="nYc-ML-Pqg"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="20"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rMS-dg-eVh">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rMS-dg-eVh" userLabel="FoodIntakeView">
                                 <rect key="frame" x="20" y="598" width="374" height="81"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="flame" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="cXx-pW-a1q">
@@ -615,21 +620,49 @@
                                     <constraint firstAttribute="height" constant="81" id="xKg-gH-GEk"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="15"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
                                 </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kyr-0d-8wu" customClass="CircularProgressView" customModule="Calorie_App" customModuleProvider="target">
+                                <rect key="frame" x="87" y="259" width="240" height="240"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKG-Vx-PSh">
+                                        <rect key="frame" x="99" y="109" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="SUj-eK-mdZ"/>
+                                    <constraint firstAttribute="width" constant="240" id="oAU-Jv-Vhv"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jCN-zd-9qz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="YEr-nR-csx" firstAttribute="leading" secondItem="jCN-zd-9qz" secondAttribute="leading" constant="72" id="9Kt-Ft-8mF"/>
+                            <constraint firstItem="YEr-nR-csx" firstAttribute="top" secondItem="Zvf-Rx-aYb" secondAttribute="bottom" constant="30" id="CMA-GH-6Zf"/>
+                            <constraint firstItem="Zvf-Rx-aYb" firstAttribute="leading" secondItem="jCN-zd-9qz" secondAttribute="leading" id="MNA-Mu-N4W"/>
                             <constraint firstItem="jCN-zd-9qz" firstAttribute="bottom" secondItem="tXW-eN-jgn" secondAttribute="bottom" constant="31" id="OrP-TF-ThR"/>
                             <constraint firstItem="tXW-eN-jgn" firstAttribute="leading" secondItem="jCN-zd-9qz" secondAttribute="leading" constant="20" id="Pdt-Xu-1bc"/>
+                            <constraint firstItem="kyr-0d-8wu" firstAttribute="leading" secondItem="jCN-zd-9qz" secondAttribute="leading" constant="87" id="Q4o-Lc-1JF"/>
+                            <constraint firstItem="kyr-0d-8wu" firstAttribute="top" secondItem="YEr-nR-csx" secondAttribute="bottom" constant="63" id="UmB-cF-49w"/>
+                            <constraint firstItem="Zvf-Rx-aYb" firstAttribute="top" secondItem="hFE-hB-iCz" secondAttribute="top" id="hrg-oW-rby"/>
                             <constraint firstItem="tXW-eN-jgn" firstAttribute="top" secondItem="rMS-dg-eVh" secondAttribute="bottom" constant="22" id="rOh-Tv-71B"/>
                             <constraint firstItem="rMS-dg-eVh" firstAttribute="leading" secondItem="jCN-zd-9qz" secondAttribute="leading" constant="20" id="wgi-LK-tol"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" selectedImage="person" catalog="system" id="CUh-Mc-uNV"/>
+                    <connections>
+                        <outlet property="CircularProgress" destination="kyr-0d-8wu" id="b3w-hC-ObA"/>
+                        <outlet property="percentLabel" destination="CKG-Vx-PSh" id="gKm-eX-j6e"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CzN-u4-6fX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="363.768115942029" y="-371.65178571428572"/>
         </scene>
@@ -644,8 +677,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="PGn-G5-sAa" kind="relationship" relationship="viewControllers" id="frD-wz-to1"/>
-                        <segue destination="lmL-A3-plb" kind="relationship" relationship="viewControllers" id="5K4-HV-Kkv"/>
                         <segue destination="Ax4-cY-rFE" kind="relationship" relationship="viewControllers" id="bn4-ye-hLL"/>
+                        <segue destination="lmL-A3-plb" kind="relationship" relationship="viewControllers" id="5K4-HV-Kkv"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7kw-MP-o0a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
