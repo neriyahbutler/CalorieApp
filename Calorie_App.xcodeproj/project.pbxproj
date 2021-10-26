@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,9 @@
 		3F02526E271DE26500341D88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F02526C271DE26500341D88 /* LaunchScreen.storyboard */; };
 		3F025278271DE88300341D88 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F025277271DE88300341D88 /* ProfileViewController.swift */; };
 		3F02527A271F0EC800341D88 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F025279271F0EC700341D88 /* CircularProgressView.swift */; };
+		3F1C49602724C0CA0047EC16 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F1C495F2724C0CA0047EC16 /* GoogleService-Info.plist */; };
+		3F1C49622724FA100047EC16 /* FoodIntakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C49612724FA100047EC16 /* FoodIntakeViewController.swift */; };
+		664828AAAE69123917F490E6 /* Pods_Calorie_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBDBA03F9ECE7B7D4D4CEA53 /* Pods_Calorie_App.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,11 @@
 		3F02526F271DE26500341D88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F025277271DE88300341D88 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		3F025279271F0EC700341D88 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		3F1C495F2724C0CA0047EC16 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3F1C49612724FA100047EC16 /* FoodIntakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodIntakeViewController.swift; sourceTree = "<group>"; };
+		53D529D2D9D465EA230D648F /* Pods-Calorie_App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calorie_App.release.xcconfig"; path = "Target Support Files/Pods-Calorie_App/Pods-Calorie_App.release.xcconfig"; sourceTree = "<group>"; };
+		70ECF717B5502225D96AF8F1 /* Pods-Calorie_App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calorie_App.debug.xcconfig"; path = "Target Support Files/Pods-Calorie_App/Pods-Calorie_App.debug.xcconfig"; sourceTree = "<group>"; };
+		BBDBA03F9ECE7B7D4D4CEA53 /* Pods_Calorie_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Calorie_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				664828AAAE69123917F490E6 /* Pods_Calorie_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +55,8 @@
 			children = (
 				3F025260271DE26400341D88 /* Calorie_App */,
 				3F02525F271DE26400341D88 /* Products */,
+				F9C18CA7D9F4CB6235758C46 /* Pods */,
+				52C39188F9A962594A7567A9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,8 +80,27 @@
 				3F02526F271DE26500341D88 /* Info.plist */,
 				3F025277271DE88300341D88 /* ProfileViewController.swift */,
 				3F025279271F0EC700341D88 /* CircularProgressView.swift */,
+				3F1C495F2724C0CA0047EC16 /* GoogleService-Info.plist */,
+				3F1C49612724FA100047EC16 /* FoodIntakeViewController.swift */,
 			);
 			path = Calorie_App;
+			sourceTree = "<group>";
+		};
+		52C39188F9A962594A7567A9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BBDBA03F9ECE7B7D4D4CEA53 /* Pods_Calorie_App.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F9C18CA7D9F4CB6235758C46 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				70ECF717B5502225D96AF8F1 /* Pods-Calorie_App.debug.xcconfig */,
+				53D529D2D9D465EA230D648F /* Pods-Calorie_App.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,9 +110,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3F025272271DE26500341D88 /* Build configuration list for PBXNativeTarget "Calorie_App" */;
 			buildPhases = (
+				490FC85C7316D7982E1ADA75 /* [CP] Check Pods Manifest.lock */,
 				3F02525A271DE26400341D88 /* Sources */,
 				3F02525B271DE26400341D88 /* Frameworks */,
 				3F02525C271DE26400341D88 /* Resources */,
+				1AB2210DBA2AA245D2673690 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,11 +164,54 @@
 			files = (
 				3F02526E271DE26500341D88 /* LaunchScreen.storyboard in Resources */,
 				3F02526B271DE26500341D88 /* Assets.xcassets in Resources */,
+				3F1C49602724C0CA0047EC16 /* GoogleService-Info.plist in Resources */,
 				3F025269271DE26400341D88 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1AB2210DBA2AA245D2673690 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Calorie_App/Pods-Calorie_App-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Calorie_App/Pods-Calorie_App-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Calorie_App/Pods-Calorie_App-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		490FC85C7316D7982E1ADA75 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Calorie_App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3F02525A271DE26400341D88 /* Sources */ = {
@@ -147,6 +222,7 @@
 				3F025262271DE26400341D88 /* AppDelegate.swift in Sources */,
 				3F025278271DE88300341D88 /* ProfileViewController.swift in Sources */,
 				3F02527A271F0EC800341D88 /* CircularProgressView.swift in Sources */,
+				3F1C49622724FA100047EC16 /* FoodIntakeViewController.swift in Sources */,
 				3F025264271DE26400341D88 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,6 +367,7 @@
 		};
 		3F025273271DE26500341D88 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70ECF717B5502225D96AF8F1 /* Pods-Calorie_App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -309,6 +386,7 @@
 		};
 		3F025274271DE26500341D88 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53D529D2D9D465EA230D648F /* Pods-Calorie_App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

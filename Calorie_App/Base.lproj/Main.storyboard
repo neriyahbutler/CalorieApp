@@ -12,7 +12,7 @@
         <!--Food Intake-->
         <scene sceneID="Da1-2Q-5cR">
             <objects>
-                <viewController id="lmL-A3-plb" sceneMemberID="viewController">
+                <viewController id="lmL-A3-plb" customClass="FoodIntakeViewController" customModule="Calorie_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="99f-Ad-YtA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,7 +24,7 @@
                                         <rect key="frame" x="63.5" y="100" width="287" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="F2l-3o-Nwh"/>
-                                            <constraint firstAttribute="width" constant="287" id="JmR-Em-i62"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="287" id="JmR-Em-i62"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="28"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -54,27 +54,41 @@
                                         <rect key="frame" x="50" y="30" width="315" height="24"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Intake" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ji0-yf-A6a">
-                                                <rect key="frame" x="0.0" y="0.0" width="152.5" height="24"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="175.5" height="24"/>
                                                 <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="24"/>
                                                 <color key="textColor" red="0.20392156859999999" green="0.2470588235" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="j56-Vn-pKv">
-                                                <rect key="frame" x="183.5" y="0.0" width="131.5" height="24"/>
+                                                <rect key="frame" x="206.5" y="0.0" width="108.5" height="24"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/3000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OcJ-co-Hgr">
-                                                        <rect key="frame" x="0.0" y="0.0" width="90.5" height="24"/>
-                                                        <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="24"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="75.5" height="24"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="75.5" id="FcQ-Tm-KAw"/>
+                                                            <constraint firstAttribute="height" constant="24" id="yBK-2a-Ke1"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="20"/>
                                                         <color key="textColor" systemColor="systemRedColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cal" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNg-j7-6AU">
-                                                        <rect key="frame" x="93.5" y="0.0" width="38" height="24"/>
-                                                        <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="24"/>
+                                                        <rect key="frame" x="78.5" y="0.0" width="30" height="24"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="24" id="55u-HB-3dw"/>
+                                                            <constraint firstAttribute="width" constant="30" id="rL5-0i-yb8"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="19"/>
                                                         <color key="textColor" systemColor="systemRedColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="bNg-j7-6AU" firstAttribute="centerY" secondItem="j56-Vn-pKv" secondAttribute="centerY" id="42P-B4-evD"/>
+                                                    <constraint firstItem="OcJ-co-Hgr" firstAttribute="centerY" secondItem="j56-Vn-pKv" secondAttribute="centerY" id="c8I-53-ccT"/>
+                                                    <constraint firstItem="bNg-j7-6AU" firstAttribute="leading" secondItem="OcJ-co-Hgr" secondAttribute="trailing" constant="3" id="lhT-rP-qTW"/>
+                                                    <constraint firstAttribute="trailing" secondItem="bNg-j7-6AU" secondAttribute="trailing" id="zNI-Je-S2A"/>
+                                                </constraints>
                                             </stackView>
                                         </subviews>
                                         <constraints>
@@ -112,7 +126,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Intake History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pnU-TE-by1">
                                         <rect key="frame" x="50" y="30" width="263" height="24"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="263" id="YOc-Fk-6od"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="263" id="YOc-Fk-6od"/>
                                             <constraint firstAttribute="height" constant="24" id="fHv-Lu-pbI"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="24"/>
@@ -120,21 +134,22 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tOl-uy-BZG">
-                                        <rect key="frame" x="0.0" y="129" width="374" height="140"/>
+                                        <rect key="frame" x="0.0" y="129" width="374" height="429"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstAttribute="height" constant="429" id="Wzq-Pk-dXJ"/>
                                             <constraint firstAttribute="width" constant="374" id="ZGC-Yp-41z"/>
-                                            <constraint firstAttribute="height" constant="140" id="jF2-YL-faz"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="429" id="tJB-re-vt6"/>
                                         </constraints>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="65" id="Zkk-ze-ffE">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="food_cell" rowHeight="65" id="Zkk-ze-ffE">
                                                 <rect key="frame" x="0.0" y="24.5" width="374" height="65"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zkk-ze-ffE" id="TkC-UY-gVs">
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="65"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pizza" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ygl-sv-zT8" userLabel="Food">
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pizza" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ygl-sv-zT8" userLabel="Food">
                                                             <rect key="frame" x="20" y="22" width="109" height="21"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -148,7 +163,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gmF-st-z8X">
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gmF-st-z8X">
                                                             <rect key="frame" x="238" y="22" width="78" height="21"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -157,6 +172,7 @@
                                                         </label>
                                                     </subviews>
                                                 </tableViewCellContentView>
+                                                <color key="backgroundColor" white="0.826484312816542" alpha="1" colorSpace="calibratedWhite"/>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
@@ -173,7 +189,7 @@
                                         <rect key="frame" x="226" y="83" width="132" height="30"/>
                                         <color key="backgroundColor" red="0.20392156862745098" green="0.24705882352941178" blue="0.29411764705882354" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="132" id="I3e-0R-MoY"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="132" id="I3e-0R-MoY"/>
                                             <constraint firstAttribute="height" constant="30" id="RU1-KO-wrv"/>
                                         </constraints>
                                         <state key="normal" title="Search">
@@ -182,6 +198,9 @@
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="foodSubmit:" destination="lmL-A3-plb" eventType="touchUpInside" id="UGg-9K-L42"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -192,10 +211,13 @@
                                     <constraint firstItem="pnU-TE-by1" firstAttribute="top" secondItem="tRd-3I-DAV" secondAttribute="top" constant="30" id="7CI-HV-CfE"/>
                                     <constraint firstItem="cNs-9J-a8C" firstAttribute="top" secondItem="pnU-TE-by1" secondAttribute="bottom" constant="22" id="EFG-zk-hYf"/>
                                     <constraint firstAttribute="trailing" secondItem="EWx-XB-187" secondAttribute="trailing" constant="16" id="Eju-8I-k8v"/>
+                                    <constraint firstItem="EWx-XB-187" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cNs-9J-a8C" secondAttribute="trailing" symbolic="YES" id="GaA-59-Kkr"/>
                                     <constraint firstItem="VyR-41-YrI" firstAttribute="leading" secondItem="tRd-3I-DAV" secondAttribute="leading" constant="8" id="Iih-h1-hPp"/>
                                     <constraint firstItem="VyR-41-YrI" firstAttribute="top" secondItem="tRd-3I-DAV" secondAttribute="top" constant="19" id="JnQ-Ab-Z6Z"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="153" id="KfM-j6-w4e"/>
                                     <constraint firstAttribute="height" constant="153" id="XTF-Co-COK"/>
                                     <constraint firstItem="tOl-uy-BZG" firstAttribute="top" secondItem="EWx-XB-187" secondAttribute="bottom" constant="16" id="ZQ9-bK-pce"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pnU-TE-by1" secondAttribute="trailing" constant="20" symbolic="YES" id="hzo-oJ-DtP"/>
                                     <constraint firstItem="pnU-TE-by1" firstAttribute="leading" secondItem="VyR-41-YrI" secondAttribute="trailing" constant="8" id="uRq-gZ-Gxm"/>
                                     <constraint firstItem="tOl-uy-BZG" firstAttribute="top" secondItem="cNs-9J-a8C" secondAttribute="bottom" constant="9" id="yH6-wQ-g4H"/>
                                 </constraints>
@@ -216,6 +238,12 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Food Intake" id="EXj-Dz-Xe2"/>
+                    <connections>
+                        <outlet property="foodSearchBar" destination="cNs-9J-a8C" id="3eY-np-zCU"/>
+                        <outlet property="historyTableView" destination="tOl-uy-BZG" id="L5i-60-eok"/>
+                        <outlet property="historyView" destination="tRd-3I-DAV" id="qNN-TT-TAN"/>
+                        <outlet property="targetCalories" destination="OcJ-co-Hgr" id="15Y-2w-h0W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AAP-7C-lZO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -683,7 +711,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7kw-MP-o0a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-525" y="-31"/>
+            <point key="canvasLocation" x="-703" y="-37"/>
         </scene>
     </scenes>
     <resources>
