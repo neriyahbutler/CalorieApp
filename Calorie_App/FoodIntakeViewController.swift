@@ -12,13 +12,16 @@ struct CalorieIntakeInfo: Codable {
     init() {
         foodName = ""
         calories = 0
+        id = ""
     }
-    var foodName: String;
+    var foodName: String
     var calories: Int
+    var id: String
 }
 
-class FoodIntakeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FoodIntakeViewController: UIViewController {
     
+    var selectedFood = CalorieIntakeInfo()
     var info = [CalorieIntakeInfo]()
     
     @IBOutlet weak var foodSearchBar: UISearchBar!
@@ -85,35 +88,70 @@ class FoodIntakeViewController: UIViewController, UITableViewDelegate, UITableVi
                         
                         calorieInfo.foodName = userCalories!["food"] as! String
                         calorieInfo.calories = userCalories!["calories"] as! Int
-                                        
+                        calorieInfo.id = key
+                                    
                         self.info.append(calorieInfo)
                     }
                 }
                 self.historyTableView.reloadData()
+                self.historyTableView.tableFooterView = UIView()
             }
         }
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.historyTableView.dequeueReusableCell(withIdentifier: "food_cell", for: indexPath)
-        
-        let foodName = cell.viewWithTag(1) as! UILabel
-        let calorieAmount = cell.viewWithTag(2) as! UILabel
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = self.historyTableView.dequeueReusableCell(withIdentifier: "food_cell", for: indexPath)
+//
+//        let foodName = cell.viewWithTag(1) as! UILabel
+//        let calorieAmount = cell.viewWithTag(2) as! UILabel
+//
+//        if self.info.count > 0 {
+//            let tempCalorieInfo = self.info[indexPath.row]
+//            foodName.text = tempCalorieInfo.foodName
+//            calorieAmount.text = String(tempCalorieInfo.calories)
+//        }
+//        return cell
+//    }
+//
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return self.info.count
+//    }
+    
+    @IBAction func foodSubmit(_ sender: Any) {
+        insertToTable()
+        loadFoodIntake()
+    }
+}
 
-        if self.info.count > 0 {
-            let tempCalorieInfo = self.info[indexPath.row]
-            foodName.text = tempCalorieInfo.foodName
-            calorieAmount.text = String(tempCalorieInfo.calories)
-        }
-        return cell
+extension FoodIntakeViewController: UITableViewDelegate, UITableViewDataSource {
+//    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+//        return .delete
+//    }
+//
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            var x = ref.child("exercises").child(self.username).child(self.info[indexPath.row].id).setValue([])
+//            updateTable()
+//        }
+//    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.info.count
     }
     
-    @IBAction func foodSubmit(_ sender: Any) {
-        insertToTable()
-        loadFoodIntake()
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "food_cell", for: indexPath)
+        let foodName = cell.viewWithTag(1) as! UILabel
+        let calorieAmount = cell.viewWithTag(2) as! UILabel
+        
+        if self.info.count > 0 {
+            let tempCalorieInfo = self.info[indexPath.row]
+            foodName.text = tempCalorieInfo.foodName
+            calorieAmount.text = String(tempCalorieInfo.calories)
+        }
+        return cell
     }
 }
