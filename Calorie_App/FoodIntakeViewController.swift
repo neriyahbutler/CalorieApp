@@ -37,13 +37,13 @@ class FoodIntakeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         [self.view .bringSubviewToFront(self.historyTableView)]
         historyTableView.delegate = self
         historyTableView.dataSource = self
         
         self.updateTable()
         loadFoodIntake()
+        self.historyTableView.tableFooterView = UIView()
     }
     
 //    override func viewDidDisappear(_ animated: Bool) {
@@ -75,7 +75,9 @@ class FoodIntakeViewController: UIViewController {
     
     func updateTable()
     {
+        self.historyTableView.tableFooterView = nil
         currentUserCalories = 0
+        self.info = []
         
         ref.child("dailycalorieintake").child(self.username).observeSingleEvent(of: .value) {(snapshot) in
             let userCaloriesList = snapshot.value as? [String:Any]

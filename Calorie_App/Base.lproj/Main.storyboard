@@ -126,7 +126,7 @@
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="132" id="I3e-0R-MoY"/>
                                             <constraint firstAttribute="height" constant="30" id="RU1-KO-wrv"/>
                                         </constraints>
-                                        <state key="normal" title="Search">
+                                        <state key="normal" title="Add Food">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -217,7 +217,7 @@
                             <constraint firstItem="Vu1-2a-2F2" firstAttribute="top" secondItem="99f-Ad-YtA" secondAttribute="top" id="urY-vQ-USY"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Food Intake" image="smallcircle.fill.circle.fill" catalog="system" id="EXj-Dz-Xe2"/>
+                    <tabBarItem key="tabBarItem" title="Food Intake" image="smallcircle.fill.circle" catalog="system" selectedImage="smallcircle.fill.circle.fill" id="EXj-Dz-Xe2"/>
                     <connections>
                         <outlet property="foodSearchBar" destination="cNs-9J-a8C" id="3eY-np-zCU"/>
                         <outlet property="historyTableView" destination="tOl-uy-BZG" id="L5i-60-eok"/>
@@ -405,7 +405,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Cef-Ir-5aT"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="chZ-Zh-WYf" firstAttribute="top" secondItem="28x-DR-O5U" secondAttribute="bottom" constant="17" id="0u1-yf-2YV"/>
                             <constraint firstItem="28x-DR-O5U" firstAttribute="top" secondItem="kBV-IG-FRV" secondAttribute="bottom" constant="28" id="3Am-cf-cw0"/>
@@ -419,7 +419,7 @@
                             <constraint firstItem="vC4-hx-pbk" firstAttribute="centerX" secondItem="GCD-57-Uwd" secondAttribute="centerX" id="tcM-Qr-7to"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Calories Burned" image="flame" catalog="system" id="mxU-zV-JcX"/>
+                    <tabBarItem key="tabBarItem" title="Calories Burned" image="flame" catalog="system" selectedImage="flame.fill" id="mxU-zV-JcX"/>
                     <connections>
                         <outlet property="caloriesBurnedLabel" destination="qPv-Ol-uMK" id="DHA-VW-Uh9"/>
                         <outlet property="exerciseSearch" destination="hMG-2v-HBO" id="SLe-X8-71h"/>
@@ -588,7 +588,7 @@
                             <constraint firstItem="rMS-dg-eVh" firstAttribute="leading" secondItem="jCN-zd-9qz" secondAttribute="leading" constant="20" id="wgi-LK-tol"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" id="CUh-Mc-uNV"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" selectedImage="person.fill" id="CUh-Mc-uNV"/>
                     <connections>
                         <outlet property="CircularProgress" destination="kyr-0d-8wu" id="b3w-hC-ObA"/>
                         <outlet property="caloriesBurnedLabel" destination="819-Qw-zKy" id="heJ-Dl-nGP"/>
@@ -607,7 +607,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ak0-1w-xMu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="selectedImageTintColor" red="1" green="0.82745098039999998" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="PGn-G5-sAa" kind="relationship" relationship="viewControllers" id="frD-wz-to1"/>
@@ -911,9 +911,12 @@
     <resources>
         <image name="clock.arrow.circlepath" catalog="system" width="128" height="110"/>
         <image name="flame" catalog="system" width="108" height="128"/>
+        <image name="flame.fill" catalog="system" width="108" height="128"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="location.north" catalog="system" width="108" height="128"/>
         <image name="person" catalog="system" width="128" height="117"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="smallcircle.fill.circle" catalog="system" width="128" height="121"/>
         <image name="smallcircle.fill.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

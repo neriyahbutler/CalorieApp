@@ -53,7 +53,7 @@ class ProfileViewController: UIViewController, CustomAlertSettingsDelegate {
     
     func okButton(targetDeficitInput: Int) {
         ref.child("accounts").child(self.username).child("targetDeficit").setValue(targetDeficitInput)
-        print(targetDeficitInput, "was the value inputted")
+//        print(targetDeficitInput, "was the value inputted")
         
         self.userTargetDeficit = targetDeficitInput
         
@@ -82,7 +82,6 @@ class ProfileViewController: UIViewController, CustomAlertSettingsDelegate {
                 self.currentUserIntake = dictionary["foodIntake"] as! Int
                 self.currentUserBurned = dictionary["caloriesBurned"] as! Int
                 self.userTargetDeficit = dictionary["targetDeficit"] as! Int
-                print("Target is", self.userTargetDeficit)
             }
         })
         
@@ -91,7 +90,6 @@ class ProfileViewController: UIViewController, CustomAlertSettingsDelegate {
         
         if self.userTargetDeficit != 0 {
             self.percentProgress = Float((currentUserIntake - currentUserBurned))/Float((userTargetDeficit))
-            self.percentProgress = round(self.percentProgress * 10.0) / 10.0
         } else {
             self.percentProgress = 0
         }
@@ -101,8 +99,8 @@ class ProfileViewController: UIViewController, CustomAlertSettingsDelegate {
     @objc func animateProgress() {
         let cp = self.view.viewWithTag(101) as! CircularProgressView
         cp.setProgressWithAnimation(duration: 1.0, value: self.percentProgress)
-        
-        percentLabel.text = String(self.percentProgress * 100) + "%"
+        print(percentProgress)
+        percentLabel.text = String(format: "%.2g", self.percentProgress * 100) + "%"
         percentLabel.layer.zPosition = 2
     }
 
