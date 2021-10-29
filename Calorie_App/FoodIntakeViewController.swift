@@ -27,6 +27,9 @@ class FoodIntakeViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var historyTableView: UITableView!
     
     let userTargetCalories = 3000
+    let ref = Database.database().reference()
+    
+    var username: String = "neriyahbutler"
     var currentUserCalories = 0
     
     override func viewDidLoad() {
@@ -36,41 +39,42 @@ class FoodIntakeViewController: UIViewController, UITableViewDelegate, UITableVi
         historyTableView.delegate = self
         historyTableView.dataSource = self
         
-        self.updateTable(username: "test")
-        
-//        ref.child("dailycalorieintake").child("neriyahbutler").childByAutoId().setValue(["food":"Pizza","calories":0])
-//        ref.child("dailycalorieintake").child("neriyahbutler").childByAutoId().setValue(["food":"Pizza","calories":0])
-//        ref.child("dailycalorieintake").child("neriyahbutler").childByAutoId().setValue(["food":"Pizza","calories":0])
-//        ref.child("dailycalorieintake").child("neriyahbutler").childByAutoId().setValue(["food":"Pizza","calories":0])
-//        ref.child("dailycalorieintake").child("neriyahbutler").childByAutoId().setValue(["food":"Pizza","calories":0])
-//        ref.child("dailycalorieintake").child("neriyahbutler").childByAutoId().setValue(["food":"Pizza","calories":0])
-//        ref.child("dailycalorieintake").child("neriyahbutler").childByAutoId().setValue(["food":"Pizza","calories":0])
-//        ref.child("dailycalorieintake").child("neriyahbutler").childByAutoId().setValue(["food":"Pizza","calories":0])
-//        ref.child("dailycalorieintake").child("neriyahbutler").childByAutoId().setValue(["food":"Pizza","calories":0])
-//        ref.child("dailycalorieintake").child("neriyahbutler").childByAutoId().setValue(["food":"Pizza","calories":0])
-//        ref.child("dailycalorieintake").child("neriyahbutler").childByAutoId().setValue(["food":"Pizza","calories":0])
-        // Do any additional setup after loading the view.
+        self.updateTable()
+        loadFoodIntake()
     }
     
-    func insertToTable(username: String)
+//    override func viewDidDisappear(_ animated: Bool) {
+//        let profileTab = self.tabBarController?.children[0] as! ProfileViewController
+//        profileTab.currentUserIntake = currentUserCalories
+//    }
+    
+    func loadFoodIntake() {
+        ref.child("accounts").child(self.username).observe(.value, with: {(snapshot) in
+            if let dictionary = snapshot.value as? [String: Any] {
+                self.targetCalories.text = "\(dictionary["foodIntake"] as! Int) Cal"
+                self.currentUserCalories = dictionary["foodIntake"] as! Int
+            }
+        })
+    }
+    
+    func insertToTable()
     {
-        let ref = Database.database().reference()
-        
         let foodName = self.foodSearchBar!.text
         let foodCalories = 90
         
-        ref.child("dailycalorieintake").child(username).childByAutoId().setValue(["food": foodName, "calories":foodCalories])
+        ref.child("dailycalorieintake").child(self.username).childByAutoId().setValue(["food": foodName, "calories":foodCalories])
         
         self.currentUserCalories += foodCalories
-        self.targetCalories.text = "\(String(self.currentUserCalories))/\(self.userTargetCalories)"
-        updateTable(username: username)
+        ref.child("accounts").child(self.username).child("foodIntake").setValue(self.currentUserCalories)
+        
+        updateTable()
     }
     
-    func updateTable(username: String)
+    func updateTable()
     {
-        let ref = Database.database().reference()
+        currentUserCalories = 0
         
-        ref.child("dailycalorieintake").child(username).observeSingleEvent(of: .value) {(snapshot) in
+        ref.child("dailycalorieintake").child(self.username).observeSingleEvent(of: .value) {(snapshot) in
             let userCaloriesList = snapshot.value as? [String:Any]
             if userCaloriesList != nil {
                 userCaloriesList!.forEach { item in
@@ -81,7 +85,7 @@ class FoodIntakeViewController: UIViewController, UITableViewDelegate, UITableVi
                         
                         calorieInfo.foodName = userCalories!["food"] as! String
                         calorieInfo.calories = userCalories!["calories"] as! Int
-                        
+                                        
                         self.info.append(calorieInfo)
                     }
                 }
@@ -90,37 +94,26 @@ class FoodIntakeViewController: UIViewController, UITableViewDelegate, UITableVi
         }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.historyTableView.dequeueReusableCell(withIdentifier: "food_cell", for: indexPath)
         
         let foodName = cell.viewWithTag(1) as! UILabel
         let calorieAmount = cell.viewWithTag(2) as! UILabel
-//
+
         if self.info.count > 0 {
             let tempCalorieInfo = self.info[indexPath.row]
-    //
             foodName.text = tempCalorieInfo.foodName
             calorieAmount.text = String(tempCalorieInfo.calories)
-    //        cell.textLabel?.text = self.x[indexPath.row]
         }
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("The length of info is \(self.info.count)")
         return self.info.count
     }
     
     @IBAction func foodSubmit(_ sender: Any) {
-        insertToTable(username: "test")
+        insertToTable()
+        loadFoodIntake()
     }
 }
