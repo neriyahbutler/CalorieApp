@@ -28,8 +28,10 @@ class ProfileViewController: UIViewController, CustomAlertSettingsDelegate {
 
         loadUserDetails()
         
+        handlePercentColor()
+        
         CircularProgress.trackColor = UIColor(red: 237.0/255.0, green: 237.0/255.0, blue: 237.0/255.0, alpha: 1.0)
-        CircularProgress.progressColor = UIColor(red: 157.0/255.0, green: 237.0/255.0, blue: 164.0/255.0, alpha: 1.0)
+        
         CircularProgress.setProgressWithAnimation(duration: 1.0, value: Float(self.percentProgress))
         
         percentLabel.text = String(self.percentProgress * 100) + "%"
@@ -39,6 +41,14 @@ class ProfileViewController: UIViewController, CustomAlertSettingsDelegate {
     override func viewDidAppear(_ animated: Bool) {
         loadUserDetails()
         animateProgress()
+    }
+    
+    func handlePercentColor() {
+        if self.percentProgress < 0.5 {
+            CircularProgress.progressColor = UIColor(red: 255.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0)
+        } else {
+            CircularProgress.progressColor = UIColor(red: 157.0/255.0, green: 237.0/255.0, blue: 164.0/255.0, alpha: 1.0)
+        }
     }
     
     func okButton(targetDeficitInput: Int) {
@@ -85,7 +95,7 @@ class ProfileViewController: UIViewController, CustomAlertSettingsDelegate {
         } else {
             self.percentProgress = 0
         }
-        print("The current percent is", self.percentProgress)
+        handlePercentColor()
     }
     
     @objc func animateProgress() {
