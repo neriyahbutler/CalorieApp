@@ -38,10 +38,26 @@ class ProfileViewController: UIViewController, CustomAlertSettingsDelegate {
         percentLabel.layer.zPosition = 2
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+
         loadUserDetails()
         animateProgress()
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
     
     func handlePercentColor() {
         if self.percentProgress < 0.5 {
@@ -66,13 +82,7 @@ class ProfileViewController: UIViewController, CustomAlertSettingsDelegate {
     }
     
     @IBAction func settingsButton(_ sender: Any) {
-        let customAlert = self.storyboard?.instantiateViewController(identifier: "CustomAlertSettingsViewController") as! CustomAlertSettingsViewController
-        customAlert.delegate = self
-        customAlert.modalPresentationStyle = .overCurrentContext
-        customAlert.providesPresentationContextTransitionStyle = true
-        customAlert.definesPresentationContext = true
-        customAlert.modalTransitionStyle = .crossDissolve
-        self.present(customAlert, animated: true, completion: nil)
+        performSegue(withIdentifier: "profileToSettings", sender: self)
     }
     
     

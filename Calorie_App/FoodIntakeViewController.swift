@@ -34,7 +34,7 @@ class FoodIntakeViewController: UIViewController {
     
     var username: String = "neriyahbutler"
     var currentUserCalories = 0
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         [self.view .bringSubviewToFront(self.historyTableView)]
@@ -75,6 +75,7 @@ class FoodIntakeViewController: UIViewController {
     
     func updateTable()
     {
+        print("Updating table")
         self.historyTableView.tableFooterView = nil
         currentUserCalories = 0
         self.info = []
@@ -126,16 +127,23 @@ class FoodIntakeViewController: UIViewController {
 }
 
 extension FoodIntakeViewController: UITableViewDelegate, UITableViewDataSource {
-//    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-//        return .delete
-//    }
-//
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            var x = ref.child("exercises").child(self.username).child(self.info[indexPath.row].id).setValue([])
-//            updateTable()
-//        }
-//    }
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            
+            let x = ref.child("dailycalorieintake").child(self.username).child(self.info[indexPath.row].id).setValue([])
+
+            self.currentUserCalories -= self.info[indexPath.row].calories
+            targetCalories.text = "\(String(self.currentUserCalories)) Cal"
+            ref.child("accounts").child(self.username).child("foodIntake").setValue(self.currentUserCalories)
+            
+            info.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .bottom)
+        }
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }

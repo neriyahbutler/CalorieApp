@@ -20,6 +20,8 @@
 		3F1C4966272A03920047EC16 /* CalBurnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C4965272A03920047EC16 /* CalBurnViewController.swift */; };
 		3F1C4968272A1E910047EC16 /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C4967272A1E910047EC16 /* CustomAlertViewController.swift */; };
 		3F442185272B823C00A1D6AE /* CustomAlertSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F442184272B823C00A1D6AE /* CustomAlertSettingsViewController.swift */; };
+		3F442187272C60E300A1D6AE /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F442186272C60E300A1D6AE /* SignInViewController.swift */; };
+		3F442189272C60F900A1D6AE /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F442188272C60F900A1D6AE /* SignUpViewController.swift */; };
 		664828AAAE69123917F490E6 /* Pods_Calorie_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBDBA03F9ECE7B7D4D4CEA53 /* Pods_Calorie_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +41,8 @@
 		3F1C4965272A03920047EC16 /* CalBurnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalBurnViewController.swift; sourceTree = "<group>"; };
 		3F1C4967272A1E910047EC16 /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
 		3F442184272B823C00A1D6AE /* CustomAlertSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertSettingsViewController.swift; sourceTree = "<group>"; };
+		3F442186272C60E300A1D6AE /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		3F442188272C60F900A1D6AE /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		53D529D2D9D465EA230D648F /* Pods-Calorie_App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calorie_App.release.xcconfig"; path = "Target Support Files/Pods-Calorie_App/Pods-Calorie_App.release.xcconfig"; sourceTree = "<group>"; };
 		70ECF717B5502225D96AF8F1 /* Pods-Calorie_App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calorie_App.debug.xcconfig"; path = "Target Support Files/Pods-Calorie_App/Pods-Calorie_App.debug.xcconfig"; sourceTree = "<group>"; };
 		BBDBA03F9ECE7B7D4D4CEA53 /* Pods_Calorie_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Calorie_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +95,8 @@
 				3F1C4965272A03920047EC16 /* CalBurnViewController.swift */,
 				3F1C4967272A1E910047EC16 /* CustomAlertViewController.swift */,
 				3F442184272B823C00A1D6AE /* CustomAlertSettingsViewController.swift */,
+				3F442186272C60E300A1D6AE /* SignInViewController.swift */,
+				3F442188272C60F900A1D6AE /* SignUpViewController.swift */,
 			);
 			path = Calorie_App;
 			sourceTree = "<group>";
@@ -227,6 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F442189272C60F900A1D6AE /* SignUpViewController.swift in Sources */,
 				3F025266271DE26400341D88 /* ViewController.swift in Sources */,
 				3F025262271DE26400341D88 /* AppDelegate.swift in Sources */,
 				3F1C4968272A1E910047EC16 /* CustomAlertViewController.swift in Sources */,
@@ -235,6 +242,7 @@
 				3F02527A271F0EC800341D88 /* CircularProgressView.swift in Sources */,
 				3F1C4966272A03920047EC16 /* CalBurnViewController.swift in Sources */,
 				3F1C49622724FA100047EC16 /* FoodIntakeViewController.swift in Sources */,
+				3F442187272C60E300A1D6AE /* SignInViewController.swift in Sources */,
 				3F025264271DE26400341D88 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
