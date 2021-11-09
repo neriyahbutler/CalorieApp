@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class SettingsViewController: UIViewController, CustomAlertSettingsHistoryDelegate {
-
+    let ref = Database.database().reference()
+    let username = "neriyahbutler"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -41,7 +44,11 @@ class SettingsViewController: UIViewController, CustomAlertSettingsHistoryDelega
     }
     
     func okButton() {
-        print("help me")
+        ref.child("accounts").child(username).child("caloriesBurned").setValue(0)
+        ref.child("accounts").child(username).child("foodIntake").setValue(0)
+        ref.child("accounts").child(username).child("targetDeficit").setValue(0)
+        
+        ref.child("dailycalorieintake").child(username).setValue([])
     }
 
     func cancelButton() {

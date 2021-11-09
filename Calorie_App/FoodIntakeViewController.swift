@@ -34,7 +34,7 @@ class FoodIntakeViewController: UIViewController {
     
     var username: String = "neriyahbutler"
     var currentUserCalories = 0
-        
+            
     override func viewDidLoad() {
         super.viewDidLoad()
         [self.view .bringSubviewToFront(self.historyTableView)]
@@ -43,7 +43,14 @@ class FoodIntakeViewController: UIViewController {
         
         self.updateTable()
         loadFoodIntake()
+        self.historyTableView.reloadData()
         self.historyTableView.tableFooterView = UIView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.updateTable()
+        loadFoodIntake()
+        self.historyTableView.reloadData()
     }
     
 //    override func viewDidDisappear(_ animated: Bool) {
@@ -100,6 +107,7 @@ class FoodIntakeViewController: UIViewController {
                 self.historyTableView.tableFooterView = UIView()
             }
         }
+        print("Info is \(self.info)")
     }
     
 //    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
