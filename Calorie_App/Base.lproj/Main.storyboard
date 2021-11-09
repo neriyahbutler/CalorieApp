@@ -625,21 +625,362 @@
             </objects>
             <point key="canvasLocation" x="2728.985507246377" y="-680.35714285714278"/>
         </scene>
-        <!--Settings-->
+        <!--Settings View Controller-->
         <scene sceneID="69F-df-mbC">
             <objects>
-                <viewController id="sRk-F5-nfq" sceneMemberID="viewController">
+                <viewController id="sRk-F5-nfq" customClass="SettingsViewController" customModule="Calorie_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vSV-zn-E4G">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="szj-5H-05Y">
+                                <rect key="frame" x="20" y="166" width="374" height="282"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="frS-Z7-thD">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Jkg-nh-58M"/>
+                                            <constraint firstAttribute="width" constant="374" id="Rng-Du-rch"/>
+                                        </constraints>
+                                        <state key="normal" title="Change user's first name">
+                                            <color key="titleColor" red="0.20392156859999999" green="0.2470588235" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="changeFirstName:" destination="sRk-F5-nfq" eventType="touchUpInside" id="a5B-gI-gNF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zpt-Vq-1Qr">
+                                        <rect key="frame" x="0.0" y="58" width="374" height="50"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="9wL-2d-l46"/>
+                                            <constraint firstAttribute="width" constant="374" id="KfS-sT-df1"/>
+                                        </constraints>
+                                        <state key="normal" title="Change user's set target caloric deficit">
+                                            <color key="titleColor" red="0.20392156859999999" green="0.2470588235" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="changeTarget:" destination="sRk-F5-nfq" eventType="touchUpInside" id="0PJ-BH-bTt"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ye-c8-3mr">
+                                        <rect key="frame" x="0.0" y="116" width="374" height="50"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="374" id="qE5-Nl-O71"/>
+                                            <constraint firstAttribute="height" constant="50" id="tHC-L6-gaE"/>
+                                        </constraints>
+                                        <state key="normal" title="Clear user's history">
+                                            <color key="titleColor" red="0.20392156859999999" green="0.2470588235" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="clearHistory:" destination="sRk-F5-nfq" eventType="touchUpInside" id="lAb-4f-dmn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ewo-yu-B6D">
+                                        <rect key="frame" x="0.0" y="174" width="374" height="50"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="374" id="ZLk-iC-wky"/>
+                                            <constraint firstAttribute="height" constant="50" id="bkp-qj-1oF"/>
+                                        </constraints>
+                                        <state key="normal" title="Change user's password">
+                                            <color key="titleColor" red="0.20392156859999999" green="0.2470588235" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="changePassword:" destination="sRk-F5-nfq" eventType="touchUpInside" id="5ZM-th-dYj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWc-8A-hwf">
+                                        <rect key="frame" x="0.0" y="232" width="374" height="50"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="eK6-mb-1Bc"/>
+                                            <constraint firstAttribute="width" constant="374" id="plg-XD-TJg"/>
+                                        </constraints>
+                                        <state key="normal" title="Logout">
+                                            <color key="titleColor" red="0.20392156859999999" green="0.2470588235" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="logout:" destination="sRk-F5-nfq" eventType="touchUpInside" id="Ok3-DE-DfM"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGd-cP-Bhp">
+                                <rect key="frame" x="141" y="107" width="134" height="40"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="A7k-Ik-NOL"/>
                         <color key="backgroundColor" red="1" green="0.82745098039999998" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="szj-5H-05Y" firstAttribute="top" secondItem="qGd-cP-Bhp" secondAttribute="bottom" constant="19" id="3Gf-tk-QcF"/>
+                            <constraint firstItem="qGd-cP-Bhp" firstAttribute="centerX" secondItem="vSV-zn-E4G" secondAttribute="centerX" id="BlF-RL-mw1"/>
+                            <constraint firstItem="szj-5H-05Y" firstAttribute="top" secondItem="A7k-Ik-NOL" secondAttribute="top" constant="78" id="GKI-iI-mfL"/>
+                            <constraint firstItem="szj-5H-05Y" firstAttribute="centerX" secondItem="vSV-zn-E4G" secondAttribute="centerX" id="jdE-kh-W25"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Settings" id="bZE-8e-FPj"/>
+                    <navigationItem key="navigationItem" id="bZE-8e-FPj"/>
+                    <connections>
+                        <segue destination="r1V-T0-xcD" kind="show" identifier="settingsToTarget" id="mhg-Pq-iOw"/>
+                        <segue destination="bjV-0Q-0fd" kind="show" identifier="settingsToName" id="ZDW-i2-BcV"/>
+                        <segue destination="BTP-MF-yR2" kind="show" identifier="settingsToPassword" id="sYh-ae-QnO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uvr-kW-VTM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3554" y="-680"/>
+            <point key="canvasLocation" x="3553.6231884057975" y="-680.35714285714278"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="p2j-6p-6Wf">
+            <objects>
+                <viewController id="r1V-T0-xcD" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8xg-8m-KtM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nvv-ro-8LY">
+                                <rect key="frame" x="20" y="153" width="374" height="108"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current target caloric deficit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9T1-GQ-vJo">
+                                        <rect key="frame" x="8" y="17" width="245" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="0.20392156859999999" green="0.2470588235" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your target caloric deficit" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YDV-27-Mie">
+                                        <rect key="frame" x="8" y="54" width="358" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DZB-ya-WSo">
+                                <rect key="frame" x="20" y="269" width="374" height="108"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The caloric deficit that you enter will be used to determine your progress towards reaching your daily goal" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eyU-IN-Tkt">
+                                        <rect key="frame" x="8" y="8" width="358" height="92"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="0.20392156859999999" green="0.2470588235" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Change user's set target caloric" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2RM-Bg-BaU">
+                                <rect key="frame" x="20" y="88" width="374" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="UGQ-WV-MqZ"/>
+                        <color key="backgroundColor" red="1" green="0.82745098039999998" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Cvv-Ek-0Qa"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YIj-Ss-RhQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4479.7101449275369" y="-894.64285714285711"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="VQl-TV-BLE">
+            <objects>
+                <viewController id="BTP-MF-yR2" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c6S-gQ-c1X">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Change user's password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSb-cu-O8x">
+                                <rect key="frame" x="20" y="88" width="374" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QgG-ac-ytc">
+                                <rect key="frame" x="20" y="153" width="374" height="108"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter your new password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Tx-Ob-94e">
+                                        <rect key="frame" x="8" y="17" width="221" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="0.20392156859999999" green="0.2470588235" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your new pasword" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6jz-R6-uWZ">
+                                        <rect key="frame" x="8" y="54" width="358" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hI6-rQ-XOd">
+                                <rect key="frame" x="20" y="269" width="374" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The caloric deficit that you enter will be used to determine your progress towards reaching your daily goal" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c02-ss-cAU">
+                                        <rect key="frame" x="0.0" y="4" width="358" height="92"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="0.20392156859999999" green="0.2470588235" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="a1N-h5-YrW"/>
+                        <color key="backgroundColor" red="1" green="0.82745098039999998" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="h4n-hW-BJH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SKD-XX-Y8M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6000.0000000000009" y="-895.3125"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="e89-um-qoA">
+            <objects>
+                <viewController id="bjV-0Q-0fd" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ptz-mK-dTj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yGk-x2-yYg">
+                                <rect key="frame" x="20" y="153" width="374" height="108"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current user's first name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ziK-SD-dXo">
+                                        <rect key="frame" x="8" y="17" width="217" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="0.20392156859999999" green="0.2470588235" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your first name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vsv-Rw-Gnc">
+                                        <rect key="frame" x="8" y="54" width="358" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="phG-gU-yJh">
+                                <rect key="frame" x="20" y="269" width="374" height="82"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The name that you enter here will be the one used to greet you on your user profile" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1r-Q6-126">
+                                        <rect key="frame" x="8" y="14" width="358" height="54"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="0.20392156859999999" green="0.2470588235" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Change user's first name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PoA-Ew-Y2a">
+                                <rect key="frame" x="0.0" y="97" width="414" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fp6-Sp-rno"/>
+                        <color key="backgroundColor" red="1" green="0.82745098039999998" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="TYx-mX-xxH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZxL-2E-ojp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5224.6376811594209" y="-895.3125"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="eOD-ZK-eWH">
@@ -994,7 +1335,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lsB-38-yk3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1219" y="-992"/>
+            <point key="canvasLocation" x="-1213" y="-992"/>
         </scene>
         <!--CustomAlertViewController-->
         <scene sceneID="1au-4q-Mcn">
@@ -1198,6 +1539,115 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YWM-El-Zwn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1818.840579710145" y="-680.35714285714278"/>
+        </scene>
+        <!--Custom Alert Settings History View Controller-->
+        <scene sceneID="cto-OG-9Iq">
+            <objects>
+                <viewController storyboardIdentifier="CustomAlertSettingsHistoryViewController" id="lGg-HT-qde" customClass="CustomAlertSettingsHistoryViewController" customModule="Calorie_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qIc-cH-MRj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bKW-h8-oHh">
+                                <rect key="frame" x="53" y="380" width="308" height="136"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clear User History?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F1p-Uw-Dg1">
+                                        <rect key="frame" x="0.0" y="21" width="307" height="17"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="307" id="16F-MD-Ull"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="307" id="a35-NN-WxS"/>
+                                            <constraint firstAttribute="height" constant="17" id="yKG-cR-L1U"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By pressing &quot;OK&quot;, you are confirming that you want to clear your user history" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddW-XD-u4k">
+                                        <rect key="frame" x="34" y="33" width="242" height="67"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="67" id="0T5-hJ-q6b"/>
+                                            <constraint firstAttribute="width" constant="242" id="6gB-jz-NCd"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="67" id="DLg-FT-SUA"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="242" id="HJH-7d-GMK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FpJ-RF-bkf">
+                                        <rect key="frame" x="151" y="99" width="156" height="37"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="156" id="Npv-5o-dXy"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="37" id="Xjm-sX-sYV"/>
+                                            <constraint firstAttribute="height" constant="37" id="YMW-ul-rgx"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="38" id="oBC-vx-wCk"/>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="156" id="vnJ-er-U0E"/>
+                                            <constraint firstAttribute="width" constant="156" id="w05-2d-nem"/>
+                                        </constraints>
+                                        <state key="normal" title="OK">
+                                            <color key="titleColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="okButton:" destination="lGg-HT-qde" eventType="touchUpInside" id="0uA-EJ-BOK"/>
+                                            <action selector="okButton:" destination="Fch-24-QmP" eventType="touchUpInside" id="7XJ-2b-r9W"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ce7-yg-T8G">
+                                        <rect key="frame" x="0.0" y="99" width="152" height="37"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="37" id="2Ue-H2-8wv"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="152" id="8lU-RO-0nn"/>
+                                            <constraint firstAttribute="height" constant="37" id="YSP-y0-PwJ"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="37" id="ivN-Ia-54I"/>
+                                            <constraint firstAttribute="width" constant="152" id="lBq-lB-8eG"/>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="152" id="p1a-ns-706"/>
+                                        </constraints>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" systemColor="systemRedColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelButton:" destination="Fch-24-QmP" eventType="touchUpInside" id="ASk-CI-bt6"/>
+                                            <action selector="cancelButton:" destination="lGg-HT-qde" eventType="touchUpInside" id="irT-jW-AHP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="ce7-yg-T8G" secondAttribute="bottom" id="5Og-Cl-dXP"/>
+                                    <constraint firstItem="F1p-Uw-Dg1" firstAttribute="top" secondItem="bKW-h8-oHh" secondAttribute="top" constant="21" id="QuN-J9-Ttu"/>
+                                    <constraint firstAttribute="trailing" secondItem="FpJ-RF-bkf" secondAttribute="trailing" constant="1" id="WBT-C1-1MV"/>
+                                    <constraint firstItem="ce7-yg-T8G" firstAttribute="leading" secondItem="bKW-h8-oHh" secondAttribute="leading" id="WoT-5a-UmV"/>
+                                    <constraint firstAttribute="trailing" secondItem="F1p-Uw-Dg1" secondAttribute="trailing" constant="1" id="Yey-TZ-eab"/>
+                                    <constraint firstItem="ddW-XD-u4k" firstAttribute="top" secondItem="bKW-h8-oHh" secondAttribute="top" constant="33" id="aDi-Kc-CYa"/>
+                                    <constraint firstAttribute="trailing" secondItem="ddW-XD-u4k" secondAttribute="trailing" constant="32" id="b0A-cV-vMZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="FpJ-RF-bkf" secondAttribute="bottom" id="p0m-XG-V2n"/>
+                                    <constraint firstItem="ddW-XD-u4k" firstAttribute="leading" secondItem="bKW-h8-oHh" secondAttribute="leading" constant="34" id="qNc-Pq-A3t"/>
+                                    <constraint firstItem="F1p-Uw-Dg1" firstAttribute="leading" secondItem="bKW-h8-oHh" secondAttribute="leading" id="vjn-R5-vbs"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="37L-RU-7RA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bKW-h8-oHh" firstAttribute="top" secondItem="37L-RU-7RA" secondAttribute="top" constant="336" id="Qkd-IW-5ET"/>
+                            <constraint firstItem="bKW-h8-oHh" firstAttribute="centerX" secondItem="qIc-cH-MRj" secondAttribute="centerX" id="k35-r4-coR"/>
+                            <constraint firstItem="bKW-h8-oHh" firstAttribute="centerY" secondItem="qIc-cH-MRj" secondAttribute="centerY" id="pOm-YE-PxJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="alertBody" destination="ddW-XD-u4k" id="N5I-L4-a4U"/>
+                        <outlet property="alertTitle" destination="F1p-Uw-Dg1" id="r6b-VI-jOq"/>
+                        <outlet property="alertView" destination="bKW-h8-oHh" id="qEf-4b-i5A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dtZ-fL-5d8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1920" y="-992"/>
         </scene>
     </scenes>
     <resources>

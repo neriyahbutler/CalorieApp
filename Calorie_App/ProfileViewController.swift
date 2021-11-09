@@ -8,7 +8,7 @@
 import UIKit
 import FirebaseDatabase
 
-class ProfileViewController: UIViewController, CustomAlertSettingsDelegate {
+class ProfileViewController: UIViewController {
     let ref = Database.database().reference()
     
     var percentProgress: Float = 0.7
