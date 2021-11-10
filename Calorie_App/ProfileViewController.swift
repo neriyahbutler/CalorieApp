@@ -15,9 +15,11 @@ class ProfileViewController: UIViewController {
     var currentUserBurned: Int = 0
     var currentUserIntake: Int = 0
     var userTargetDeficit: Int = 0
+    var userFirstName: String = ""
     
     var username: String = "neriyahbutler"
     
+    @IBOutlet weak var firstNameLabel: UILabel!
     @IBOutlet weak var percentLabel: UILabel!
     @IBOutlet weak var CircularProgress: CircularProgressView!
     @IBOutlet weak var foodIntakeLabel: UILabel!
@@ -27,7 +29,6 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
 
         loadUserDetails()
-        
         handlePercentColor()
         
         CircularProgress.trackColor = UIColor(red: 237.0/255.0, green: 237.0/255.0, blue: 237.0/255.0, alpha: 1.0)
@@ -41,6 +42,7 @@ class ProfileViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        loadUserDetails()
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
@@ -89,12 +91,15 @@ class ProfileViewController: UIViewController {
     func loadUserDetails() {
         ref.child("accounts").child(self.username).observe(.value, with: {(snapshot) in
             if let dictionary = snapshot.value as? [String: Any] {
+                print("The value of 'dictionary' is \(dictionary)")
+                self.userFirstName = dictionary["firstName"] as! String
                 self.currentUserIntake = dictionary["foodIntake"] as! Int
                 self.currentUserBurned = dictionary["caloriesBurned"] as! Int
                 self.userTargetDeficit = dictionary["targetDeficit"] as! Int
             }
         })
         
+        self.firstNameLabel.text = "Welcome \(self.userFirstName)!"
         self.foodIntakeLabel.text = "\(String(self.currentUserIntake)) Cal"
         self.caloriesBurnedLabel.text = "\(String(self.currentUserBurned)) Cal"
         

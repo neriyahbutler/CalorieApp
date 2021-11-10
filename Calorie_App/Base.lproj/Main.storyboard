@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -571,12 +572,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view tag="101" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kyr-0d-8wu" customClass="CircularProgressView" customModule="Calorie_App" customModuleProvider="target">
-                                <rect key="frame" x="87" y="250" width="240" height="99.5"/>
+                                <rect key="frame" x="87" y="321" width="240" height="54"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKG-Vx-PSh">
-                                        <rect key="frame" x="67.5" y="0.0" width="105.5" height="99.5"/>
+                                        <rect key="frame" x="8" y="0.0" width="224" height="54"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="CKG-Vx-PSh" secondAttribute="height" multiplier="17:16" id="bLw-eg-hnQ"/>
+                                            <constraint firstAttribute="width" constant="224" id="VkY-Vq-QOV"/>
+                                            <constraint firstAttribute="height" constant="54" id="xVT-uU-ul7"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                         <nil key="textColor"/>
@@ -585,10 +587,11 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="CKG-Vx-PSh" firstAttribute="centerY" secondItem="kyr-0d-8wu" secondAttribute="centerY" id="ED0-bU-q6H"/>
-                                    <constraint firstItem="CKG-Vx-PSh" firstAttribute="centerX" secondItem="kyr-0d-8wu" secondAttribute="centerX" id="KaE-7s-PZd"/>
+                                    <constraint firstItem="CKG-Vx-PSh" firstAttribute="leading" secondItem="kyr-0d-8wu" secondAttribute="leading" constant="8" id="17n-w7-EPF"/>
                                     <constraint firstAttribute="width" constant="240" id="Pkz-gJ-Trn"/>
-                                    <constraint firstItem="CKG-Vx-PSh" firstAttribute="top" secondItem="kyr-0d-8wu" secondAttribute="top" id="gCH-ww-0NB"/>
+                                    <constraint firstItem="CKG-Vx-PSh" firstAttribute="top" secondItem="kyr-0d-8wu" secondAttribute="top" id="WkO-Sb-IfU"/>
+                                    <constraint firstAttribute="bottom" secondItem="CKG-Vx-PSh" secondAttribute="bottom" id="ZHc-Wl-z5B"/>
+                                    <constraint firstAttribute="trailing" secondItem="CKG-Vx-PSh" secondAttribute="trailing" constant="8" id="ufl-xE-G3C"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -601,13 +604,13 @@
                             <constraint firstItem="kyr-0d-8wu" firstAttribute="leading" secondItem="jCN-zd-9qz" secondAttribute="leading" constant="87" id="JQI-hR-E6N"/>
                             <constraint firstItem="jCN-zd-9qz" firstAttribute="trailing" secondItem="kyr-0d-8wu" secondAttribute="trailing" constant="87" id="JdL-vD-Obn"/>
                             <constraint firstItem="jCN-zd-9qz" firstAttribute="bottom" secondItem="6f3-2v-fM7" secondAttribute="bottom" constant="31" id="Nfe-MQ-ca5"/>
-                            <constraint firstItem="kyr-0d-8wu" firstAttribute="top" secondItem="YEr-nR-csx" secondAttribute="bottom" constant="89" id="P4R-Vz-rOV"/>
                             <constraint firstItem="Zvf-Rx-aYb" firstAttribute="trailing" secondItem="jCN-zd-9qz" secondAttribute="trailing" id="Rfj-Sb-BYo"/>
                             <constraint firstItem="6f3-2v-fM7" firstAttribute="leading" secondItem="jCN-zd-9qz" secondAttribute="leading" constant="20" id="TNk-bw-jmV"/>
                             <constraint firstItem="jCN-zd-9qz" firstAttribute="trailing" secondItem="6f3-2v-fM7" secondAttribute="trailing" constant="20" id="Wyf-JN-Jg7"/>
                             <constraint firstItem="jCN-zd-9qz" firstAttribute="bottom" secondItem="6f3-2v-fM7" secondAttribute="bottom" constant="31" id="aeN-Cx-Owo"/>
                             <constraint firstItem="jCN-zd-9qz" firstAttribute="trailing" secondItem="YEr-nR-csx" secondAttribute="trailing" constant="72" id="gwX-4w-plq"/>
                             <constraint firstItem="YEr-nR-csx" firstAttribute="leading" secondItem="jCN-zd-9qz" secondAttribute="leading" constant="72" id="qOB-9U-JnG"/>
+                            <constraint firstItem="kyr-0d-8wu" firstAttribute="top" secondItem="YEr-nR-csx" secondAttribute="bottom" constant="160" id="wuH-yM-ahg"/>
                             <constraint firstItem="Zvf-Rx-aYb" firstAttribute="trailing" secondItem="jCN-zd-9qz" secondAttribute="trailing" id="x6T-es-skl"/>
                             <constraint firstItem="YEr-nR-csx" firstAttribute="top" secondItem="Zvf-Rx-aYb" secondAttribute="bottom" constant="38" id="ygO-Ej-LGe"/>
                         </constraints>
@@ -616,6 +619,7 @@
                     <connections>
                         <outlet property="CircularProgress" destination="kyr-0d-8wu" id="b3w-hC-ObA"/>
                         <outlet property="caloriesBurnedLabel" destination="819-Qw-zKy" id="heJ-Dl-nGP"/>
+                        <outlet property="firstNameLabel" destination="YEr-nR-csx" id="gkI-uu-6sE"/>
                         <outlet property="foodIntakeLabel" destination="8N7-Wy-nli" id="d7g-bt-tJE"/>
                         <outlet property="percentLabel" destination="CKG-Vx-PSh" id="gKm-eX-j6e"/>
                         <segue destination="sRk-F5-nfq" kind="show" identifier="profileToSettings" id="MD5-kh-2uw"/>
@@ -760,10 +764,10 @@
             </objects>
             <point key="canvasLocation" x="3553.6231884057975" y="-680.35714285714278"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings Target View Controller-->
         <scene sceneID="p2j-6p-6Wf">
             <objects>
-                <viewController id="r1V-T0-xcD" sceneMemberID="viewController">
+                <viewController id="r1V-T0-xcD" customClass="SettingsTargetViewController" customModule="Calorie_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8xg-8m-KtM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -824,20 +828,55 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZ9-sy-hNx">
+                                <rect key="frame" x="225" y="763" width="169" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.20392156859999999" green="0.2470588235" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="saveButton:" destination="r1V-T0-xcD" eventType="touchUpInside" id="Ej9-6a-Uy9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZ4-kJ-r5g">
+                                <rect key="frame" x="20" y="763" width="169" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.20392156859999999" green="0.2470588235" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="cancelButton:" destination="r1V-T0-xcD" eventType="touchUpInside" id="Fjh-CW-FgC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UGQ-WV-MqZ"/>
                         <color key="backgroundColor" red="1" green="0.82745098039999998" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="Cvv-Ek-0Qa"/>
+                    <connections>
+                        <outlet property="userInput" destination="YDV-27-Mie" id="FTQ-Ma-Hfc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YIj-Ss-RhQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4479.7101449275369" y="-894.64285714285711"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings Password View Controller-->
         <scene sceneID="VQl-TV-BLE">
             <objects>
-                <viewController id="BTP-MF-yR2" sceneMemberID="viewController">
+                <viewController id="BTP-MF-yR2" customClass="SettingsPasswordViewController" customModule="Calorie_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c6S-gQ-c1X">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -898,20 +937,55 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rii-4M-TVq">
+                                <rect key="frame" x="20" y="762" width="169" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.20392156859999999" green="0.2470588235" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="cancelButton:" destination="BTP-MF-yR2" eventType="touchUpInside" id="I3T-nM-vIo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y8e-qY-DNP">
+                                <rect key="frame" x="225" y="762" width="169" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.20392156859999999" green="0.2470588235" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="saveButton:" destination="BTP-MF-yR2" eventType="touchUpInside" id="lVp-U2-bQP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="a1N-h5-YrW"/>
                         <color key="backgroundColor" red="1" green="0.82745098039999998" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="h4n-hW-BJH"/>
+                    <connections>
+                        <outlet property="userInput" destination="6jz-R6-uWZ" id="TxT-En-Rmr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SKD-XX-Y8M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6000.0000000000009" y="-895.3125"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings First Name View Controller-->
         <scene sceneID="e89-um-qoA">
             <objects>
-                <viewController id="bjV-0Q-0fd" sceneMemberID="viewController">
+                <viewController id="bjV-0Q-0fd" customClass="SettingsFirstNameViewController" customModule="Calorie_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ptz-mK-dTj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -928,7 +1002,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your first name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vsv-Rw-Gnc">
-                                        <rect key="frame" x="8" y="54" width="358" height="34"/>
+                                        <rect key="frame" x="8" y="55" width="358" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -972,11 +1046,46 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uvG-qe-MiH">
+                                <rect key="frame" x="20" y="762" width="169" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.20392156859999999" green="0.2470588235" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="cancelButton:" destination="bjV-0Q-0fd" eventType="touchUpInside" id="wOs-86-Y9k"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jtG-O3-D07">
+                                <rect key="frame" x="225" y="762" width="169" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.20392156859999999" green="0.2470588235" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="saveButton:" destination="bjV-0Q-0fd" eventType="touchUpInside" id="8Cs-id-50q"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fp6-Sp-rno"/>
                         <color key="backgroundColor" red="1" green="0.82745098039999998" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="TYx-mX-xxH"/>
+                    <connections>
+                        <outlet property="userInput" destination="Vsv-Rw-Gnc" id="KYN-pU-LUt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZxL-2E-ojp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1259,7 +1368,7 @@
                                             <constraint firstAttribute="height" constant="37" id="ain-GL-QzY"/>
                                         </constraints>
                                         <state key="normal" title="Cancel">
-                                            <color key="titleColor" systemColor="systemRedColor"/>
+                                            <color key="titleColor" name="AccentColor"/>
                                         </state>
                                         <connections>
                                             <action selector="cancelButton:" destination="ojP-VV-6KI" eventType="touchUpInside" id="3xb-7B-bdd"/>
@@ -1277,7 +1386,7 @@
                                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="156" id="ynF-ip-sQv"/>
                                         </constraints>
                                         <state key="normal" title="OK">
-                                            <color key="titleColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" systemColor="linkColor"/>
                                         </state>
                                         <connections>
                                             <action selector="okButton:" destination="Fch-24-QmP" eventType="touchUpInside" id="4Q0-l6-wpe"/>
@@ -1377,7 +1486,7 @@
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="37" id="P6k-0V-PAs"/>
                                         </constraints>
                                         <state key="normal" title="Cancel">
-                                            <color key="titleColor" systemColor="systemRedColor"/>
+                                            <color key="titleColor" systemColor="linkColor"/>
                                         </state>
                                         <connections>
                                             <action selector="cancelButton:" destination="Fch-24-QmP" eventType="touchUpInside" id="BHY-yx-eJR"/>
@@ -1392,7 +1501,7 @@
                                             <constraint firstAttribute="width" constant="156" id="rWr-5T-axG"/>
                                         </constraints>
                                         <state key="normal" title="OK">
-                                            <color key="titleColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" systemColor="linkColor"/>
                                         </state>
                                         <connections>
                                             <action selector="okButton:" destination="Fch-24-QmP" eventType="touchUpInside" id="cFU-VX-MNg"/>
@@ -1585,7 +1694,7 @@
                                             <constraint firstAttribute="width" constant="156" id="w05-2d-nem"/>
                                         </constraints>
                                         <state key="normal" title="OK">
-                                            <color key="titleColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" systemColor="linkColor"/>
                                         </state>
                                         <connections>
                                             <action selector="okButton:" destination="lGg-HT-qde" eventType="touchUpInside" id="0uA-EJ-BOK"/>
@@ -1603,7 +1712,7 @@
                                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="152" id="p1a-ns-706"/>
                                         </constraints>
                                         <state key="normal" title="Cancel">
-                                            <color key="titleColor" systemColor="systemRedColor"/>
+                                            <color key="titleColor" systemColor="linkColor"/>
                                         </state>
                                         <connections>
                                             <action selector="cancelButton:" destination="Fch-24-QmP" eventType="touchUpInside" id="ASk-CI-bt6"/>
@@ -1661,8 +1770,14 @@
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="smallcircle.fill.circle.fill" catalog="system" width="128" height="121"/>
         <image name="tuningfork" catalog="system" width="128" height="116"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
