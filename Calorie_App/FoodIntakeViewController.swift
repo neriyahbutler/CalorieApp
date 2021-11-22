@@ -51,6 +51,7 @@ class FoodIntakeViewController: UIViewController {
         self.updateTable()
         loadFoodIntake()
         self.historyTableView.reloadData()
+        self.historyTableView.tableFooterView = UIView()
     }
     
 //    override func viewDidDisappear(_ animated: Bool) {
@@ -69,8 +70,34 @@ class FoodIntakeViewController: UIViewController {
     
     func insertToTable()
     {
-        let foodName = self.foodSearchBar!.text
+        let foodName = self.foodSearchBar!.text!
         let foodCalories = 90
+        
+        print("The value for the food is \(foodName)")
+        
+        let urlFoodString = URL(string: "https://nutrition-api.esha.com/foods?query=\(foodName)&start=0&count25&spell=true")!
+        var request = URLRequest(url: urlFoodString)
+        request.httpMethod = "GET"
+        
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.setValue("b2850ae35695446c9adc6f89f204e9e5", forHTTPHeaderField: "Ocp-Apim-Subscription-Key")
+        
+        let task = URLSession.shared.dataTask(with: request)  { (data, response, error) in
+            if let error = error {
+                print("Error took place \(error)")
+                return
+            }
+            
+            if let response = response as? HTTPURLResponse {
+                print("Response HTTP Status code: \(response.statusCode)")
+            }
+            
+            if let data = data, let dataString = String(data: data, encoding: .utf8) {
+                print("Response data string:\n \(dataString)")
+            }
+        }
+        
+        task.resume()
         
         ref.child("dailycalorieintake").child(self.username).childByAutoId().setValue(["food": foodName, "calories":foodCalories])
         
@@ -131,6 +158,7 @@ class FoodIntakeViewController: UIViewController {
     @IBAction func foodSubmit(_ sender: Any) {
         insertToTable()
         loadFoodIntake()
+        foodSearchBar.text = ""
     }
 }
 

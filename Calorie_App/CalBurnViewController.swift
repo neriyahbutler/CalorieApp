@@ -25,7 +25,7 @@ class CalBurnViewController: UIViewController, CustomAlertDelegate {
     
     var userCaloriesBurned = 0
     var userTargetCalories = 0
-    
+        
     @IBOutlet weak var caloriesBurnedLabel: UILabel!
     @IBOutlet weak var exerciseSearch: UISearchBar!
     let ref = Database.database().reference()
