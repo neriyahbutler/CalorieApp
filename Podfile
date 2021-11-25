@@ -8,6 +8,8 @@ target 'Calorie_App' do
   # Pods for Calorie_App
 
   pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
   pod 'Firebase/Database'
 
 end
