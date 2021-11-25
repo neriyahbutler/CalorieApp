@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>607360442380-l8m4fb1fe4pk3hgb414kt4up7ad3m6qr.apps.googleusercontent.com</string>
+	<string>223973626141-9uc88l2lnujtqq3dji17q9krdg052rd1.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.607360442380-l8m4fb1fe4pk3hgb414kt4up7ad3m6qr</string>
+	<string>com.googleusercontent.apps.223973626141-9uc88l2lnujtqq3dji17q9krdg052rd1</string>
 	<key>API_KEY</key>
-	<string>AIzaSyD5B5AZxaEgkWTXN38dXOPjsGAz6on5nE8</string>
+	<string>AIzaSyBIdtg4y8debcaF99_HgcmsLrdof3gILsk</string>
 	<key>GCM_SENDER_ID</key>
-	<string>607360442380</string>
+	<string>223973626141</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.Neriyah.Calorie-App</string>
 	<key>PROJECT_ID</key>
-	<string>calorieappdb</string>
+	<string>calorieappdbv2</string>
 	<key>STORAGE_BUCKET</key>
-	<string>calorieappdb.appspot.com</string>
+	<string>calorieappdbv2.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:607360442380:ios:8d9a08e8733fb15232ce29</string>
+	<string>1:223973626141:ios:d85607d6be1e005febd1f4</string>
 	<key>DATABASE_URL</key>
-	<string>https://calorieappdb-default-rtdb.firebaseio.com</string>
+	<string>https://calorieappdbv2-default-rtdb.firebaseio.com</string>
 </dict>
 </plist>
